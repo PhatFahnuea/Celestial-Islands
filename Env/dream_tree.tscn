@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cia1gyggrss0j"]
+
+[ext_resource type="PackedScene" uid="uid://cmfojp2ld42el" path="res://Env/Dream Tree.glb" id="1_smyow"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ps14"]
+size = Vector3(1.27747, 0.305237, 1.03235)
+
+[node name="Dream Tree" instance=ExtResource("1_smyow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489065, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="group1790380980" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="group1790380980/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138733, -0.379852, 0.0161743)
+shape = SubResource("BoxShape3D_1ps14")

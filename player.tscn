@@ -1,0 +1,189 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpe5gax1i068d"]
+
+[ext_resource type="Script" path="res://scipt/player.gd" id="1_4j4mb"]
+[ext_resource type="PackedScene" uid="uid://op5ecdmjlbgw" path="res://Charecter/rabbit_b.tscn" id="2_2fsmi"]
+[ext_resource type="PackedScene" uid="uid://deeq7ft20p3u5" path="res://Charecter/Carrot.glb" id="3_e0rs7"]
+[ext_resource type="AudioStream" uid="uid://bd4mgnxi8sk4k" path="res://sound/person-running-loop-245173.mp3" id="4_mkjcf"]
+[ext_resource type="AudioStream" uid="uid://bk87vwuo0vfht" path="res://sound/punch.mp3" id="5_h5yxt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0euk8"]
+radius = 1.33073
+height = 2.66147
+
+[sub_resource type="Animation" id="Animation_b8433"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Carrot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.739064, -0.954464, -0.0450259), Vector3(0.739064, -0.954464, -0.0450259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Carrot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.01941, 0, 0), Vector3(-1.19639, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ec5w4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Carrot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.739064, -0.954464, -0.0450259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Carrot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.01941, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5vsyg"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Carrot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.739064, -0.954464, -0.0450259), Vector3(0.53276, -0.847631, -0.0450259), Vector3(0.685808, -0.927223, -0.0450259), Vector3(0.936976, -0.890703, -0.0450259), Vector3(0.706451, -0.890703, -0.0450259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Carrot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.04563, 0, 0), Vector3(-1.04563, 0, 0), Vector3(-1.04563, 0, 0), Vector3(-1.04563, 0, 0), Vector3(-1.04563, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gbdsa"]
+resource_name = "punch"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D/Carrot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.794872, -0.886084, -0.0450259), Vector3(0.794872, -0.886084, -0.0450259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D/Carrot:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.04563, 0, 0), Vector3(-1.13282, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6knoc"]
+_data = {
+"Idle": SubResource("Animation_b8433"),
+"RESET": SubResource("Animation_ec5w4"),
+"move": SubResource("Animation_5vsyg"),
+"punch": SubResource("Animation_gbdsa")
+}
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_edko2"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("Camera3D:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("Label3D:text")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="player" type="CharacterBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+collision_layer = 2
+script = ExtResource("1_4j4mb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34225, 0)
+shape = SubResource("CapsuleShape3D_0euk8")
+
+[node name="rabbitB" parent="." instance=ExtResource("2_2fsmi")]
+transform = Transform3D(-0.99854, 0, -0.054009, 0, 1, 0, 0.054009, 0, -0.99854, -0.0471894, 0, 0.0581169)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85787, -0.713984)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -50)
+collision_mask = 2
+
+[node name="Carrot" parent="Camera3D" instance=ExtResource("3_e0rs7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.261934, 0.425899, 0, -0.425899, 0.261934, 0.739064, -0.954464, -0.0450259)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6knoc")
+}
+autoplay = "Idle"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_edko2")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28711, 0)
+
+[node name="Run" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_mkjcf")
+
+[node name="Punch" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_h5yxt")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

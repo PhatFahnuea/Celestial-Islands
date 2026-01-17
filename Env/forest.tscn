@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://d34hdjpk1fmf8"]
+
+[ext_resource type="PackedScene" uid="uid://bhwcokkuvqjlu" path="res://Env/Forest.glb" id="1_qfx83"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b26yb"]
+radius = 0.0586991
+height = 0.265863
+
+[node name="Forest" instance=ExtResource("1_qfx83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3253, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="forest" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="forest/StaticBody3D" index="0"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0202554, 0.989271, -0.144685, 0.0176655, 0.145046, 0.989267, -1.26239, -0.187334, -0.235747)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="forest/StaticBody3D" index="1"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0202554, 0.989271, -0.144685, 0.0176655, 0.145046, 0.989267, -0.809248, -0.187334, 0.305927)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="forest/StaticBody3D" index="2"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, -0.326824, -0.144152, 0.538584)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="forest/StaticBody3D" index="3"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.242523, -0.144152, 0.707009)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="forest/StaticBody3D" index="4"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.683977, -0.144152, 0.75839)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="forest/StaticBody3D" index="5"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 1.1725, -0.212747, 0.573434)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="forest/StaticBody3D" index="6"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 1.20221, -0.198669, -0.252857)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="forest/StaticBody3D" index="7"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.538775, -0.18071, -0.387403)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="forest/StaticBody3D" index="8"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.159144, -0.177262, -0.933795)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="forest/StaticBody3D" index="9"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.130021, -0.177262, 0.108971)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="forest/StaticBody3D" index="10"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, -0.365528, -0.177262, 0.000931442)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="forest/StaticBody3D" index="11"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, -0.0669349, -0.177262, -0.451075)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="forest/StaticBody3D" index="12"]
+transform = Transform3D(0.999526, 0.0183955, 0.0246896, -0.0178963, 0.999634, -0.0202883, -0.0250538, 0.0198369, 0.999489, -0.729915, -0.154948, -0.409701)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="forest/StaticBody3D" index="13"]
+transform = Transform3D(0.999526, 0.0183955, 0.0246896, -0.0178963, 0.999634, -0.0202883, -0.0250538, 0.0198369, 0.999489, -0.726526, -0.154948, -1.08799)
+shape = SubResource("CapsuleShape3D_b26yb")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="forest/StaticBody3D" index="14"]
+transform = Transform3D(0.999639, 0.0174821, -0.0204139, -0.0178963, 0.999634, -0.0202883, 0.0200518, 0.0206463, 0.999586, 0.71363, -0.168346, 0.172038)
+shape = SubResource("CapsuleShape3D_b26yb")

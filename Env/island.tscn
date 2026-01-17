@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp2pjxuaq5335"]
+
+[ext_resource type="PackedScene" uid="uid://c0pfntx6j7dmk" path="res://Env/Island.glb" id="1_tqvdo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vn6p6"]
+height = 0.365773
+radius = 0.403908
+
+[node name="Island" instance=ExtResource("1_tqvdo")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Island01_Cylinder" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island01_Cylinder/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00238037, 0.524768, 0.0128174)
+shape = SubResource("CylinderShape3D_vn6p6")

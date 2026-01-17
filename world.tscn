@@ -1,0 +1,372 @@
+[gd_scene load_steps=25 format=3 uid="uid://ctdg1kin03v5s"]
+
+[ext_resource type="Script" path="res://scipt/world.gd" id="1_8qqb5"]
+[ext_resource type="PackedScene" uid="uid://8acnoi048wmw" path="res://Env/ground_2.tscn" id="2_swdbk"]
+[ext_resource type="Texture2D" uid="uid://41xcex61j7d5" path="res://scene (1).png" id="3_7382m"]
+[ext_resource type="PackedScene" uid="uid://d34hdjpk1fmf8" path="res://Env/forest.tscn" id="4_wai2r"]
+[ext_resource type="PackedScene" uid="uid://cuv0tdudqspbq" path="res://Env/secret.tscn" id="5_8rnw2"]
+[ext_resource type="PackedScene" uid="uid://cia1gyggrss0j" path="res://Env/dream_tree.tscn" id="6_6xy0b"]
+[ext_resource type="PackedScene" uid="uid://cp2pjxuaq5335" path="res://Env/island.tscn" id="8_jwkvk"]
+[ext_resource type="PackedScene" uid="uid://cotbktqbht2e" path="res://Env/root_scene.tscn" id="8_vm7ac"]
+[ext_resource type="Texture2D" uid="uid://8pblpd6hul7p" path="res://scene.png" id="9_yql20"]
+[ext_resource type="Texture2D" uid="uid://dfd67n13pm6k7" path="res://1.png" id="10_clvsm"]
+[ext_resource type="Texture2D" uid="uid://0bm5jx8cyxay" path="res://2.png" id="11_8cgbs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_btrdo"]
+sky_top_color = Color(0.42895, 0.46729, 0.546253, 1)
+sky_horizon_color = Color(0.724385, 0.642362, 0.5212, 1)
+ground_bottom_color = Color(0.680265, 0.814551, 0.937593, 1)
+ground_horizon_color = Color(0.645619, 0.680361, 0.460092, 1)
+
+[sub_resource type="Sky" id="Sky_y06kg"]
+sky_material = SubResource("ProceduralSkyMaterial_btrdo")
+
+[sub_resource type="Environment" id="Environment_2ei6i"]
+background_mode = 2
+sky = SubResource("Sky_y06kg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r53bf"]
+bg_color = Color(1, 0.470588, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s51ib"]
+bg_color = Color(0.360784, 0.882353, 0.901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfry8"]
+bg_color = Color(1, 0.823529, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7loac"]
+bg_color = Color(0.360784, 0.882353, 0.901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywu2f"]
+bg_color = Color(1, 0.823529, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ammui"]
+bg_color = Color(0.854902, 0, 0.219608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4eix"]
+bg_color = Color(0.196078, 0.8, 0.458824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jtp7"]
+bg_color = Color(1, 0.470588, 0.156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7iv2f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtko6"]
+
+[node name="world" type="Node"]
+script = ExtResource("1_8qqb5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2ei6i")
+
+[node name="ground2" parent="." instance=ExtResource("2_swdbk")]
+
+[node name="env" type="Node" parent="."]
+
+[node name="Forest" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 37.5357, 2.47042, 40.6251)
+
+[node name="Forest2" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(11.5351, 0, -3.30765, 0, 12, 0, 3.30765, 0, 11.5351, 37.5357, 2.77466, 18.8877)
+
+[node name="Forest3" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(9.61262, 0, -2.75637, 0, 10, 0, 2.75637, 0, 9.61262, 15.2783, 2.47042, 38.5143)
+
+[node name="Forest4" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(12.4964, 0, -3.58329, 0, 13, 0, 3.58329, 0, 12.4964, 15.2556, 3.31675, 15.1255)
+
+[node name="Forest11" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(12.4964, 0, -3.58329, 0, 13, 0, 3.58329, 0, 12.4964, 32.1816, 3.31675, -9.89348)
+
+[node name="Forest14" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(12.9767, 0, -0.777325, 0, 13, 0, 0.777325, 0, 12.9767, 6.02174, 3.31675, -31.4868)
+
+[node name="Forest9" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(3.06927, 0, -10.5631, 0, 11, 0, 10.5631, 0, 3.06927, -36.894, 3.31675, -8.58806)
+
+[node name="Forest5" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(10.5739, 0, -3.03201, 0, 11, 0, 3.03201, 0, 10.5739, -8.47626, 2.73978, 19.537)
+
+[node name="Forest10" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-2.28309, 0, -10.7605, 0, 11, 0, 10.7605, 0, -2.28309, 5.01297, 2.73978, -8.63322)
+
+[node name="Forest13" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-10.5023, 0, -3.27131, 0, 11, 0, 3.27131, 0, -10.5023, 34.1197, 2.73978, -36.2485)
+
+[node name="Forest6" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(9.30991, 0, -7.57136, 0, 12, 0, 7.57136, 0, 9.30991, -31.6625, 2.8797, 19.537)
+
+[node name="Forest15" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(1.80395, 0, 11.8636, 0, 12, 0, -11.8636, 0, 1.80395, -18.7234, 2.8797, -10.0322)
+
+[node name="Forest16" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-1.65021, 0, -10.8755, 0, 11, 0, 10.8755, 0, -1.65021, -16.2675, 2.8797, -34.7016)
+
+[node name="Forest7" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-11.8745, 0, -1.73082, 0, 12, 0, 1.73082, 0, -11.8745, -9.19016, 2.47042, 37.2881)
+
+[node name="Forest8" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-10.885, 0, -1.58659, 0, 11, 0, 1.58659, 0, -10.885, -37.7014, 2.47042, 37.2881)
+
+[node name="Forest12" parent="env" instance=ExtResource("4_wai2r")]
+transform = Transform3D(-10.885, 0, -1.58659, 0, 11, 0, 1.58659, 0, -10.885, -37.7014, 2.47042, 37.2881)
+
+[node name="Secret Camping spot" parent="env" instance=ExtResource("5_8rnw2")]
+transform = Transform3D(29.9949, -0.550271, 0, 0.547467, 29.8421, 3.02492, -0.0554842, -3.02441, 29.8471, -51.4545, 8.82708, -35.4183)
+
+[node name="Dream Tree" parent="env" instance=ExtResource("6_6xy0b")]
+transform = Transform3D(-0.0164065, 0, 20, 0, 20, 0, -20, 0, -0.0164065, -41.5837, 6.26496, -33.1989)
+
+[node name="Island3" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 2.98453, 0.304315, 0, -0.304315, 2.98453, -30.5533, 2.43363, -32.8472)
+
+[node name="Island4" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(2, 0, 0, 0, 1.98968, 0.202877, 0, -0.202877, 1.98968, -31.3184, 4.26337, -33.5299)
+
+[node name="Island5" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -30.4826, 0.595417, -36.9726)
+
+[node name="Island7" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.1521, 4.98651, -33.2474)
+
+[node name="Island8" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.1521, 6.63036, -30.5015)
+
+[node name="Island9" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -33.1521, 8.77908, -29.3493)
+
+[node name="Island10" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -35.284, 11.1064, -29.3774)
+
+[node name="Island13" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3.95898, 0.565288, 0.0834443, -0.571414, 3.91653, 0.578134, 0, -0.584125, 3.95712, -38.4809, 14.2676, -28.0183)
+
+[node name="Island14" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37.4395, 15.9556, -29.9658)
+
+[node name="Island11" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4.95157, -0.688837, 0.086312, 0.662893, 4.87606, 0.885761, -0.206202, -0.865739, 4.92016, -35.284, 11.4709, -24.5732)
+
+[node name="Island12" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3.99039, -0.24798, 0.123602, 0.222619, 3.93177, 0.701155, -0.164961, -0.692591, 3.93613, -35.284, 17.3487, -33.8625)
+
+[node name="Island15" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4.98799, -0.309975, 0.154502, 0.278274, 4.91471, 0.876443, -0.206202, -0.865739, 4.92016, -35.284, 17.3487, -38.9093)
+
+[node name="Island19" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(2.99279, -0.185985, 0.0927011, 0.166964, 2.94883, 0.525866, -0.123721, -0.519444, 2.9521, -35.284, 19.5895, -42.3176)
+
+[node name="Island17" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3.99039, -0.24798, 0.123602, 0.222619, 3.93177, 0.701155, -0.164961, -0.692591, 3.93613, -39.8788, 20.6904, -42.5079)
+
+[node name="Island20" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4.98799, -0.309975, 0.154502, 0.278274, 4.91471, 0.876443, -0.206202, -0.865739, 4.92016, -39.7285, 21.8476, -47.2811)
+
+[node name="Island21" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(6.98319, -0.433966, 0.216303, 0.389584, 6.8806, 1.22702, -0.288682, -1.21204, 6.88822, -41.4202, 21.2673, -51.5055)
+
+[node name="Island22" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4.98799, -0.309975, 0.154502, 0.278274, 4.91471, 0.876443, -0.206202, -0.86574, 4.92016, -44.9043, 23.4536, -49.894)
+
+[node name="Island18" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(3.59393, 1.69759, 0.449324, -1.74828, 3.55507, 0.552271, -0.164961, -0.692592, 3.93613, -41.0254, 21.9627, -39.064)
+
+[node name="Island6" parent="env" instance=ExtResource("8_jwkvk")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -27.5959, -1.54628, -36.9726)
+
+[node name="Root Scene" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 27.4473, 0.339073, 31.2856)
+
+[node name="Root Scene2" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -20.3526, 0.339073, 29.5151)
+
+[node name="Root Scene3" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -24.2494, 0.339073, 0.740662)
+
+[node name="Root Scene4" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 23.231, 0.339073, 0.740662)
+
+[node name="Root Scene5" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 23.231, 0.339073, -28.819)
+
+[node name="Root Scene6" parent="env" instance=ExtResource("8_vm7ac")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 1.25033, 0.339073, -28.819)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+layout_direction = 1
+anchors_preset = -1
+anchor_left = 0.37
+anchor_top = 0.537037
+anchor_right = 0.569
+anchor_bottom = 0.826
+offset_left = -0.23999
+offset_top = 1.0
+offset_right = 0.511963
+offset_bottom = -0.248047
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_r53bf")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Host" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_s51ib")
+text = "Host"
+
+[node name="YourName" type="LineEdit" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfry8")
+placeholder_text = "Your Name"
+alignment = 1
+
+[node name="Join" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_7loac")
+text = "Join"
+
+[node name="Address" type="LineEdit" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ywu2f")
+placeholder_text = "Enter Address to Join Here"
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Character"
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.330729
+anchor_top = 0.240741
+anchor_right = 0.619792
+anchor_bottom = 0.310185
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ammui")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f4eix")
+max_value = 3.0
+value = 3.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Scene(1)" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(992, 499)
+texture = ExtResource("3_7382m")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("..")
+
+[node name="start" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Scene" type="Sprite2D" parent="start"]
+position = Vector2(1002, 505)
+texture = ExtResource("9_yql20")
+
+[node name="Start" type="Button" parent="start/Scene"]
+anchors_preset = -1
+anchor_left = 0.417
+anchor_top = 0.871
+anchor_right = 0.5485
+anchor_bottom = 0.986
+offset_left = -997.0
+offset_top = -531.0
+offset_right = -997.0
+offset_bottom = -531.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0jtp7")
+text = "START"
+metadata/_edit_use_anchors_ = true
+
+[node name="Story1" type="CanvasLayer" parent="."]
+
+[node name="1" type="Sprite2D" parent="Story1"]
+position = Vector2(915, 502)
+texture = ExtResource("10_clvsm")
+
+[node name="Next" type="Button" parent="Story1/1"]
+offset_left = 772.0
+offset_top = 373.0
+offset_right = 950.0
+offset_bottom = 451.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_7iv2f")
+text = "next >"
+
+[node name="story2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="2" type="Sprite2D" parent="story2"]
+position = Vector2(966, 496)
+texture = ExtResource("11_8cgbs")
+
+[node name="next2" type="Button" parent="story2/2"]
+offset_left = 565.0
+offset_top = 382.0
+offset_right = 698.0
+offset_bottom = 449.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxTexture_wtko6")
+text = "next >"
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
+[connection signal="pressed" from="start/Scene/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Story1/1/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="story2/2/next2" to="." method="_on_next_2_pressed"]

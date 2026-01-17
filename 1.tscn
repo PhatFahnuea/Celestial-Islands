@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c46vwi3wk2ewg"]
+
+[ext_resource type="Script" path="res://scipt/1.gd" id="1_wnik1"]
+[ext_resource type="Texture2D" uid="uid://8pblpd6hul7p" path="res://scene.png" id="2_unlts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onbln"]
+bg_color = Color(0.956836, 0.414267, 3.85046e-07, 1)
+
+[node name="1" type="CanvasLayer"]
+script = ExtResource("1_wnik1")
+
+[node name="Scene" type="Sprite2D" parent="."]
+position = Vector2(1003, 502)
+texture = ExtResource("2_unlts")
+
+[node name="Start" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 481.0
+offset_top = 527.0
+offset_right = -427.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_onbln")
+text = "START"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

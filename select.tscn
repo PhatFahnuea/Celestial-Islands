@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://6kb2q2nt0jw"]
+
+[ext_resource type="Script" path="res://select.gd" id="1_okiuq"]
+[ext_resource type="PackedScene" uid="uid://bxlmi3gfvpvrp" path="res://Panda.tscn" id="3_00opd"]
+[ext_resource type="PackedScene" uid="uid://op5ecdmjlbgw" path="res://Charecter/rabbit_b.tscn" id="3_lhatn"]
+[ext_resource type="PackedScene" uid="uid://baek7to8tm5ey" path="res://Rabbit Cyan Hair.tscn" id="4_k2duw"]
+
+[sub_resource type="Environment" id="Environment_l2oca"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bip86"]
+
+[node name="select" type="Node3D"]
+script = ExtResource("1_okiuq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 3.8147e-06, 11.1551, 19.1185)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l2oca")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_bip86")
+
+[node name="character" type="Node" parent="."]
+
+[node name="RabbitB" parent="character" instance=ExtResource("3_lhatn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25665, 0, 8.70704)
+
+[node name="Panpan" parent="character" instance=ExtResource("3_00opd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00287962, -0.210273, 8.38369)
+
+[node name="RabbitC" parent="character" instance=ExtResource("4_k2duw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54817, 0, 8.67126)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.99751, 0, -0.0705227, 0, 1, 0, 0.0705227, 0, 0.99751, -0.878905, 4.82049, 18.6407)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.421007
+anchor_top = 0.0339506
+anchor_right = 0.564236
+anchor_bottom = 0.162037
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "name"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="beeButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.24566
+anchor_top = 0.842593
+anchor_right = 0.351562
+anchor_bottom = 0.919753
+theme_override_font_sizes/font_size = 30
+text = "RabbitB"
+metadata/_edit_use_anchors_ = true
+
+[node name="coolButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.642361
+anchor_top = 0.830247
+anchor_right = 0.747396
+anchor_bottom = 0.907407
+theme_override_font_sizes/font_size = 30
+text = "RabbitC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Panbutton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.440104
+anchor_top = 0.83642
+anchor_right = 0.526042
+anchor_bottom = 0.91358
+theme_override_font_sizes/font_size = 30
+text = "Panda"
+metadata/_edit_use_anchors_ = true
+
+[node name="startButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.453993
+anchor_top = 0.375
+anchor_right = 0.520833
+anchor_bottom = 0.452161
+theme_override_font_sizes/font_size = 30
+text = "start"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="beeButton" to="." method="_on_bee_button_pressed"]
+[connection signal="pressed" from="coolButton" to="." method="_on_cool_button_pressed"]
+[connection signal="pressed" from="Panbutton" to="." method="_on_panbutton_pressed"]
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
