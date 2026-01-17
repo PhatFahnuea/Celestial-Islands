@@ -20,5 +20,4 @@ A 3D prototype game created using Godot Engine.
 - `/script` → GDScript
 
 ## Screenshot
-(Add screenshot here)
 
